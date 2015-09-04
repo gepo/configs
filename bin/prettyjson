@@ -1,0 +1,7 @@
+#!/usr/bin/php
+<?php
+$body = json_decode(file_get_contents('php://stdin'), true);
+echo json_encode(
+    $body,
+    JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT
+);
