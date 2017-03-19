@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+import struct
+import binascii
+import sys
+import datetime
+
+mongoidData = binascii.unhexlify(sys.argv[1])
+unpacked = struct.unpack('>IBBBBBBBB', mongoidData)
+
+print "Timestamp =",unpacked[0],"("+datetime.datetime.fromtimestamp(unpacked[0]).strftime("%Y-%m-%d %H:%M:%S")+")"
+print "Machine ID =",((unpacked[3]*256+unpacked[2])*256+unpacked[1])
+print "Process ID =",(unpacked[5]*256+unpacked[6])
+print "Counter =",(unpacked[8]*256+unpacked[7])
