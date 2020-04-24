@@ -1,0 +1,5 @@
+term screen-256color
+startup_message off
+defscrollback 10000
+hardstatus string '%{=b bY}%l%{ bC} %0C %{=b bw}%-Lw%{= ck}%80>%n%f*%t%{-}%+Lw %<'
+hardstatus alwayslastline
